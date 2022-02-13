@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: perx
+      POSTGRES_USER: perx
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    networks:
+      - perx-network
+
+  server:
+    image: node:17
+    command: sh -c "npm i && node index.js"
+    ports:
+      - 3333:3333
+    working_dir: /app
+    volumes:
+      - ./server:/app
+    networks:
+      - perx-network
+
+  app:
+    image: node:17
+    command: sh -c "npm i && npm run webpack && node index.js"
+    ports:
+      - 4444:4444
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    networks:
+      - perx-network
+
+networks:
+  perx-network:
+    driver: bridge

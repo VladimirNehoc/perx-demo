@@ -1,0 +1,40 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 0 -2px 15px 3px rgba(126, 126, 126, 20%);
+  padding: 15px;
+
+  &_title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  &_image {
+    height: 200px;
+    max-height: 200px;
+  }
+
+  &_body {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &_price {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+
+      & > span {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .buy-button {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

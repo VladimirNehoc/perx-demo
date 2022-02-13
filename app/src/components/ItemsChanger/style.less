@@ -1,0 +1,28 @@
+.items-changer {
+  display: flex;
+  align-items: center;
+
+  &_remove-button, &_add-button {
+    border: none;
+    background-color: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+  }
+
+  &_remove-button {
+    position: relative;
+    top: -2px;
+  }
+
+  &_count {
+    font-size: 20px;
+    padding: 0 10px;
+    cursor: default;
+  }
+}
