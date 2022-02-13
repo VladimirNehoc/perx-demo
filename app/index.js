@@ -3,6 +3,12 @@ require('dotenv').config();
 
 const app = express();
 
+app.use(express.static(`${__dirname}/static`));
+
+app.get('/script.js', (req, res) => {
+  res.sendFile(`${__dirname}/public${req.originalUrl}`);
+});
+
 app.get('/*.js', (req, res) => {
   res.sendFile(`${__dirname}/static${req.originalUrl}`);
 });
