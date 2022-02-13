@@ -10,7 +10,7 @@ app.get('/script.js', (req, res) => {
 });
 
 app.get('/*.js', (req, res) => {
-  res.sendFile(`${__dirname}/static${req.originalUrl}`);
+  res.sendFile(`${__dirname}${req.originalUrl}`);
 });
 
 app.get('*', (req, res) => {
