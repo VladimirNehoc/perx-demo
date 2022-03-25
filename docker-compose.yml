@@ -4,13 +4,14 @@ services:
   postgres:
     image: postgres:13.3
     environment:
-      POSTGRES_DB: perx
-      POSTGRES_USER: perx
+      POSTGRES_DB: yum_food
+      POSTGRES_USER: yum_food
       POSTGRES_PASSWORD: password
+      DB_EXTENSION: uuid-ossp
     ports:
       - "5432:5432"
     networks:
-      - perx-network
+      - yum-network
 
   server:
     image: node:17
@@ -21,19 +22,19 @@ services:
     volumes:
       - ./server:/app
     networks:
-      - perx-network
+      - yum-network
 
-  app:
+  client:
     image: node:17
     command: sh -c "npm i && npm run webpack && node index.js"
     ports:
       - 4444:4444
-    working_dir: /app
+    working_dir: /client
     volumes:
-      - ./app:/app
+      - ./client:/client
     networks:
-      - perx-network
+      - yum-network
 
 networks:
-  perx-network:
+  yum-network:
     driver: bridge

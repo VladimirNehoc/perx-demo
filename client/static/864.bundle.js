@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkperx_demo_app=self.webpackChunkperx_demo_app||[]).push([[864],{7864:(e,n,t)=>{t.r(n),t.d(n,{default:()=>l});var a=t(7294),r=t(9711);const l=function(){return a.createElement(a.Fragment,null,a.createElement("span",null,"Basket"),a.createElement(r.rU,{to:"main"},"Main"))}}}]);
